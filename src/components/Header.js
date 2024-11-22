@@ -4,7 +4,9 @@ import Navigation from "./Navigation";
 const Header = () => {
   return (
     <header>
-      <img src="logo-kasa.png" alt="logo kasa"/>
+      <a href="/">
+        <img src="logo-kasa-red.png" alt="logo kasa rouge"/>
+      </a>
       <Navigation />
     </header>
   );
