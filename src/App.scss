@@ -13,6 +13,58 @@
   src: url(assets/font/Montserrat-Bold.ttf);
 }
 
+@mixin bold48() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 48px;
+}
+@mixin bold24() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+}
+@mixin bold18() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+@mixin bold14() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+@mixin bold13() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+}
+@mixin bold10() {
+  font-family: "montserrat-bold", sans-serif;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+@mixin med36() {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 36px;
+}
+@mixin med24() {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 24px;
+}
+@mixin med18() {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 18px;
+}
+@mixin med14() {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 14px;
+}
+@mixin med12() {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 12px;
+}
+
 * {
   font-family: "montserrat-medium", sans-serif;
 }
@@ -20,11 +72,11 @@
 $main-color: #ff6060;
 
 .marginComponent {
-  margin-left:100px;
-  margin-right:100px;
-  @media (max-width:500px){
-    margin-left:20px;
-    margin-right:20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  @media (max-width: 600px) {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -35,7 +87,7 @@ header {
   img {
     width: 210px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     padding: 20px;
     img {
       width: 145px;
@@ -48,14 +100,13 @@ header {
   align-items: center;
 
   &__lien {
-    font-family: "montserrat-regular", sans-serif;
     display: inline;
     margin-left: 57px;
-    font-size: 24px;
+    @include med24;
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       margin-left: 26px;
-      font-size: 12px;
+      @include med12;
       text-transform: uppercase;
     }
 
@@ -79,25 +130,23 @@ footer {
   text-align: center;
   padding-top: 66px;
   padding-bottom: 29px;
-  font-size: 24px;
+  @include med24;
+  width: 100vw;
   /*
   position:absolute;
   bottom:0;
   */
-  width: 100vw;
-
   img {
     width: 122px;
     margin-bottom: 20px;
   }
-
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
+    padding-bottom: 58px;
     img {
       margin-bottom: 10px;
     }
-
     p {
-      font-size: 12px;
+      @include med12;
       width: 35%;
       margin: auto;
     }
@@ -107,49 +156,79 @@ footer {
 #bloc404 {
   color: $main-color;
   text-align: center;
+  margin-bottom: 139px;
+  @media (max-width: 600px) {
+    margin-top: 80px;
+    margin-bottom: 110px;
+  }
   h1 {
-    font-size: 288px;
     font-family: "montserrat-bold", sans-serif;
-    margin: 0;
     font-weight: normal;
+    margin: 0;
+    font-size: 288px;
+    @media (max-width: 600px) {
+      font-size: 96px;
+    }
   }
   h2 {
-    font-size: 36px;
-    font-family: "montserrat-medium", sans-serif;
+    @include med36;
     margin-top: 70px;
     margin-bottom: 100px;
-    font-weight: normal;
+    @media (max-width: 600px) {
+      @include med18;
+      margin-top: 70px;
+      margin-bottom: 100px;
+    }
+  }
+  a {
+    color: black;
+    @include med18;
+    @media (max-width: 600px) {
+      @include med14;
+    }
   }
 }
 
 .banner {
-  // darken()
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/assets/img/paysage-ile.png);
-  background-size: cover;
-  background-position: center;
-  background-color: black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
   border-radius: 25px;
-  @media (max-width: 500px){
+  @media (max-width: 600px) {
     border-radius: 10px;
   }
   h1 {
-    font-size: 48px;
+    @include bold48;
     text-align: center;
     padding-top: 78px;
     padding-bottom: 78px;
     margin: 0;
-    @media (max-width: 500px){
-      font-size: 24px;
+    opacity: 0;
+    @media (max-width: 600px) {
+      @include bold24;
       text-align: left;
       padding-top: 31px;
       padding-bottom: 31px;
-      padding-left:16px
-
+      padding-left: 16px;
     }
   }
+}
+
+.banner__home {
+  // darken()
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/assets/img/paysage-ile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+}
+
+.banner__about {
+  // darken()
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url(/assets/img/paysage-montagne.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: black;
 }
 
 #listCard {
@@ -162,7 +241,7 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 60px;
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     background-color: white;
     margin: 22px 20px 27px 20px;
     padding: 0px;
@@ -175,21 +254,192 @@ footer {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(4, 4, 4, 0.4)),
       $main-color;
     border-radius: 10px;
-    width: 340px;
-    /* REVOIR RATIO */
-    aspect-ratio: 1 / 1;
     position: relative;
-    @media (max-width: 500px) {
+    width: 340px;
+    aspect-ratio: 1 / 1;
+    @media (max-width: 600px) {
       width: 100%;
+      aspect-ratio: 4 / 3;
     }
     h3 {
       font-family: "montserrat-bold", sans-serif;
       position: absolute;
-      font-size: 18px;
+      @include med18;
       padding: 20px;
       margin: 0;
       bottom: 0;
       color: white;
+    }
+  }
+}
+
+.section-dropdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 38px;
+  @media (max-width: 600px) {
+    margin-top: 19px;
+  }
+}
+
+.dropdownAbout {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-color;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px 8px 15px;
+  @include bold24;
+  width: 80%;
+  margin-bottom: 30px;
+  @media (max-width: 600px) {
+    @include bold13;
+    width: 100%;
+    margin-bottom: 19px;
+  }
+  h3 {
+    margin: 0;
+  }
+  img {
+    width: 32px;
+    @media (max-width: 600px) {
+      width: 24px;
+    }
+  }
+}
+
+#slider {
+  background-image: url(/assets/img/logement-1.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 25px;
+  height: 415px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: white;
+  @include med18;
+  @media (max-width: 600px) {
+    height: 255px;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  img {
+    width: 45px;
+    @media (max-width: 600px) {
+      width: 12px;
+    }
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 24px;
+    text-align: center;
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.blocLogement {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  @media (max-width: 600px) {
+    margin-top: 15px;
+    margin-bottom: 50px;
+  }
+}
+
+.blocLogement__intro {
+  @include med18;
+  width: 70%;
+  @media (max-width: 600px) {
+    width: 100%;
+    @include med14;
+  }
+  h1 {
+    @include med36;
+    margin: 0;
+    color: $main-color;
+    @media (max-width: 600px) {
+      @include med18;
+    }
+  }
+  p {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  &__tags {
+    display: flex;
+    gap: 10px;
+    button {
+      background-color: $main-color;
+      border: 0;
+      @include bold14;
+      color: white;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-radius: 10px;
+      width: 115px;
+      @media (max-width: 600px) {
+        @include bold10;
+        width: 84px;
+      }
+    }
+  }
+}
+
+.blocLogement__hote {
+  color: $main-color;
+  @include med18;
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 16px;
+    @include med12;
+  }
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    @media (max-width: 600px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__nom {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    text-align: right;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+  &__note {
+    margin-top: 21px;
+    @media (max-width: 600px) {
+      margin-top: 0px;
+    }
+    img {
+      width: 36px;
+      height: 36px;
+      @media (max-width: 600px) {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 }

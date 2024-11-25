@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Banner from "../components/Banner";
+import BannerHome from "../components/BannerHome";
 import ListCard from "../components/ListCard";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <Banner />
+      <BannerHome />
       <ListCard />
       <Footer />
     </div>
