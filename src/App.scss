@@ -72,8 +72,10 @@
 $main-color: #ff6060;
 
 .marginComponent {
-  margin-left: 100px;
-  margin-right: 100px;
+  max-width: 1440px;
+  /*  margin-left:45px;
+  margin-right:45px;*/
+  margin: auto;
   @media (max-width: 600px) {
     margin-left: 20px;
     margin-right: 20px;
@@ -83,7 +85,7 @@ $main-color: #ff6060;
 header {
   display: flex;
   justify-content: space-between;
-  padding: 45px 100px;
+  padding: 45px;
   img {
     width: 210px;
   }
@@ -202,7 +204,6 @@ footer {
     padding-top: 78px;
     padding-bottom: 78px;
     margin: 0;
-    opacity: 0;
     @media (max-width: 600px) {
       @include bold24;
       text-align: left;
@@ -229,6 +230,9 @@ footer {
   background-size: cover;
   background-position: center;
   background-color: black;
+  h1 {
+    opacity: 0;
+  }
 }
 
 #listCard {
@@ -284,6 +288,10 @@ footer {
 }
 
 .dropdownAbout {
+  margin-bottom: 30px;
+}
+
+.dropdownAbout__top {
   display: flex;
   justify-content: space-between;
   background-color: $main-color;
@@ -292,19 +300,35 @@ footer {
   padding: 10px 15px 8px 15px;
   @include bold24;
   width: 80%;
-  margin-bottom: 30px;
-  @media (max-width: 600px) {
-    @include bold13;
-    width: 100%;
-    margin-bottom: 19px;
-  }
+  margin-bottom: 0px;
   h3 {
     margin: 0;
   }
   img {
     width: 32px;
-    @media (max-width: 600px) {
+    transition: transform 400ms;
+  }
+  @media (max-width: 600px) {
+    @include bold13;
+    width: 100%;
+    margin-bottom: 19px;
+    img {
       width: 24px;
+    }
+  }
+}
+
+.dropdownAbout__bot {
+  display: none;
+  background-color: rgba(246, 246, 246, 0.45);
+  line-height: 26px;
+  @include med18;
+  ul {
+    padding: 16px 20px 20px 20px;
+    margin: 0;
+    li {
+      text-decoration: none;
+      list-style-type: none;
     }
   }
 }
@@ -323,17 +347,8 @@ footer {
   padding-right: 24px;
   color: white;
   @include med18;
-  @media (max-width: 600px) {
-    height: 255px;
-    border-radius: 10px;
-    padding-left: 6px;
-    padding-right: 6px;
-  }
   img {
     width: 45px;
-    @media (max-width: 600px) {
-      width: 12px;
-    }
   }
   p {
     display: flex;
@@ -341,7 +356,17 @@ footer {
     position: absolute;
     bottom: 24px;
     text-align: center;
-    @media (max-width: 600px) {
+  }
+
+  @media (max-width: 600px) {
+    height: 255px;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    img {
+      width: 12px;
+    }
+    p {
       display: none;
     }
   }
@@ -362,22 +387,23 @@ footer {
 .blocLogement__intro {
   @include med18;
   width: 70%;
-  @media (max-width: 600px) {
-    width: 100%;
-    @include med14;
-  }
   h1 {
     @include med36;
     margin: 0;
     color: $main-color;
-    @media (max-width: 600px) {
-      @include med18;
-    }
   }
   p {
     margin-top: 8px;
     margin-bottom: 20px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+    @include med14;
+    h1 {
+      @include med18;
+    }
+  }
+
   &__tags {
     display: flex;
     gap: 10px;
@@ -401,6 +427,11 @@ footer {
 .blocLogement__hote {
   color: $main-color;
   @include med18;
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+  }
   @media (max-width: 600px) {
     width: 100%;
     display: flex;
@@ -408,16 +439,12 @@ footer {
     flex-direction: row-reverse;
     margin-top: 16px;
     @include med12;
-  }
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50px;
-    @media (max-width: 600px) {
+    img {
       width: 32px;
       height: 32px;
     }
   }
+
   &__nom {
     display: flex;
     justify-content: end;
@@ -428,15 +455,16 @@ footer {
       margin: 0;
     }
   }
+
   &__note {
     margin-top: 21px;
-    @media (max-width: 600px) {
-      margin-top: 0px;
-    }
     img {
       width: 36px;
       height: 36px;
-      @media (max-width: 600px) {
+    }
+    @media (max-width: 600px) {
+      margin-top: 0px;
+      img {
         width: 18px;
         height: 18px;
       }

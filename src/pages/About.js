@@ -5,6 +5,7 @@ import BannerAbout from "../components/BannerAbout";
 import Dropdown from "../components/Dropdown";
 
 const About = () => {
+
   return (
     <div>
       <Header />

@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <header>
+    <header className="marginComponent">
       <a href="/">
         <img src="logo-kasa-red.png" alt="logo kasa rouge"/>
       </a>
