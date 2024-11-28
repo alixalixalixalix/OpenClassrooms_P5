@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const Dropdown = () => {
   // On déclare un état false
-  const [dropdownOuvert, setdropdownOuvert] = useState(false);
-  // Le toggle permet de passer de false à true
+  const [dropdownOuvert, setDropdownOuvert] = useState(false);
+  // On déclare une fonction qui fait passer dropdownOuvert à true
   const toggle = () => {
-    setdropdownOuvert((prev) => !prev);
+    setDropdownOuvert((switchEtat) => !switchEtat);
   };
 
   return (
@@ -23,12 +23,20 @@ const Dropdown = () => {
       <div
         className="dropdownAbout__bot"
         style={{
-          display: dropdownOuvert ? "block" : "none",
+          visibility: dropdownOuvert ? "visible" : "hidden",
+          opacity: dropdownOuvert ? "1" : "0",
+          height: dropdownOuvert ? "100%" : "0",
         }}
       >
-        <ul>
-          <li>hiuzejilr</li>
-        </ul>
+        <p
+          style={{
+            marginTop: dropdownOuvert ? "0" : "-30px",
+          }}
+        >
+          Les annonces postées sur Kasa garantissent une fiabilité totale. Les
+          photos sont conformes aux logements, et toutes les informations sont
+          régulièrement vérifiées par nos équipes.
+        </p>
       </div>
     </div>
   );
