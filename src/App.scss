@@ -257,6 +257,7 @@ footer {
   article {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(4, 4, 4, 0.4)),
       $main-color;
+    background-size: cover;
     border-radius: 10px;
     position: relative;
     width: 340px;
@@ -287,12 +288,12 @@ footer {
   }
 }
 
-.dropdownAbout {
+.dropdown {
   margin-bottom: 30px;
-  width : 80%;
+  width: 80%;
 }
 
-.dropdownAbout__top {
+.dropdown__top {
   display: flex;
   justify-content: space-between;
   background-color: $main-color;
@@ -319,10 +320,10 @@ footer {
   }
 }
 
-.dropdownAbout__bot {
+.dropdown__bot {
   visibility: hidden;
   opacity: 0;
-  margin-top:0px;
+  margin-top: 0px;
   height: 0;
   transition: margin-top 300ms, opacity 500ms, height 500ms;
 
@@ -332,10 +333,10 @@ footer {
   @include med18;
   p {
     padding: 16px 20px 20px 20px;
-    margin:0;
-    margin-top:-30px;
+    margin: 0;
+    margin-top: -30px;
     transition: all 500ms;
-/*    transition-delay: 400ms;*/
+    /*    transition-delay: 400ms;*/
   }
   ul {
     padding: 16px 20px 20px 20px;
@@ -348,21 +349,44 @@ footer {
   }
 }
 
-
 #slider {
-  background-image: url(/assets/img/logement-1.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: red;
+  margin: auto;
   position: relative;
   border-radius: 25px;
   height: 415px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 24px;
-  padding-right: 24px;
   color: white;
   @include med18;
+  @media (max-width: 600px) {
+    height: 255px;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+.conteneurImages {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  img {
+    width: 100%;
+  }
+}
+
+.interaction {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   img {
     width: 45px;
   }
@@ -373,12 +397,7 @@ footer {
     bottom: 24px;
     text-align: center;
   }
-
   @media (max-width: 600px) {
-    height: 255px;
-    border-radius: 10px;
-    padding-left: 6px;
-    padding-right: 6px;
     img {
       width: 12px;
     }
@@ -388,7 +407,20 @@ footer {
   }
 }
 
-.blocLogement {
+#droite,
+#gauche {
+  cursor: pointer;
+}
+
+#gauche {
+  padding-left: 24px;
+}
+
+#droite {
+  padding-right: 24px;
+}
+
+.blocLogement__top {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -400,7 +432,7 @@ footer {
   }
 }
 
-.blocLogement__intro {
+.blocLogement__title {
   @include med18;
   width: 70%;
   h1 {
@@ -486,4 +518,9 @@ footer {
       }
     }
   }
+}
+
+.blocLogement__bot {
+  display: flex;
+  gap: 76px;
 }

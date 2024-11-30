@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Dropdown = () => {
+const Dropdown = (dataAbout) => {
   // On déclare un état false
   const [dropdownOuvert, setDropdownOuvert] = useState(false);
   // On déclare une fonction qui fait passer dropdownOuvert à true
@@ -9,9 +9,9 @@ const Dropdown = () => {
   };
 
   return (
-    <div className="dropdownAbout">
-      <div className="dropdownAbout__top" onClick={toggle}>
-        <h3>Fiabilité</h3>
+    <div className="dropdown">
+      <div className="dropdown__top" onClick={toggle}>
+        <h3>{dataAbout.name}</h3>
         <img
           src="/arrow-dropdown.png"
           alt="icon dropdown"
@@ -21,7 +21,7 @@ const Dropdown = () => {
         />
       </div>
       <div
-        className="dropdownAbout__bot"
+        className="dropdown__bot"
         style={{
           visibility: dropdownOuvert ? "visible" : "hidden",
           opacity: dropdownOuvert ? "1" : "0",
@@ -33,9 +33,7 @@ const Dropdown = () => {
             marginTop: dropdownOuvert ? "0" : "-30px",
           }}
         >
-          Les annonces postées sur Kasa garantissent une fiabilité totale. Les
-          photos sont conformes aux logements, et toutes les informations sont
-          régulièrement vérifiées par nos équipes.
+          {dataAbout.content}
         </p>
       </div>
     </div>

@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Card = () => {
+const Card = (dataLogement) => {
     return (
         <a href="">
-            <article>
-                <h3>Titre de la location</h3>
+            <article style={{backgroundImage: "url(" + dataLogement.cover + ")"}}>
+                <h3>{dataLogement.title}</h3>
             </article>
         </a>
     );
 };
 
 export default Card;
+
