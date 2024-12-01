@@ -73,8 +73,8 @@ $main-color: #ff6060;
 
 .marginComponent {
   max-width: 1440px;
-  /*  margin-left:45px;
-  margin-right:45px;*/
+  padding-left:45px;
+  padding-right:45px;
   margin: auto;
   @media (max-width: 600px) {
     margin-left: 20px;
@@ -350,7 +350,6 @@ footer {
 }
 
 #slider {
-  background-color: red;
   margin: auto;
   position: relative;
   border-radius: 25px;
@@ -368,25 +367,37 @@ footer {
   }
 }
 
-.conteneurImages {
+.slider__imgContainer {
+  position: relative;
+  border-radius: 25px;
   margin: auto;
   width: 100%;
+  height: 415px;
   display: flex;
   overflow: hidden;
   scroll-behavior: smooth;
   img {
-    width: 100%;
+    min-width: 100%;
   }
 }
 
-.interaction {
+.slider__ui {
   position: absolute;
-  top: 0;
+  max-width: 1440px;
+  top: 162px;
   width: 100%;
-  height: 100%;
+  height: 415px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &__gauche {
+    cursor: pointer;
+    padding-left: 24px;
+  }
+  &__droite {
+    cursor: pointer;
+    padding-right: 24px;
+  }
   img {
     width: 45px;
   }
@@ -396,6 +407,7 @@ footer {
     position: absolute;
     bottom: 24px;
     text-align: center;
+    color: white;
   }
   @media (max-width: 600px) {
     img {
@@ -405,19 +417,6 @@ footer {
       display: none;
     }
   }
-}
-
-#droite,
-#gauche {
-  cursor: pointer;
-}
-
-#gauche {
-  padding-left: 24px;
-}
-
-#droite {
-  padding-right: 24px;
 }
 
 .blocLogement__top {
