@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Dropdown = (dataAbout) => {
+const Dropdown = ({ name, content }) => {
   // On déclare un état false
   const [dropdownOuvert, setDropdownOuvert] = useState(false);
   // On déclare une fonction qui fait passer dropdownOuvert à true
@@ -11,29 +11,22 @@ const Dropdown = (dataAbout) => {
   return (
     <div className="dropdown">
       <div className="dropdown__top" onClick={toggle}>
-        <h3>{dataAbout.name}</h3>
+        <h3>{name}</h3>
         <img
           src="/arrow-dropdown.png"
           alt="icon dropdown"
-          style={{
-            transform: dropdownOuvert ? "rotate(180deg)" : "rotate(0deg)",
-          }}
+          className={dropdownOuvert ? "topOpen" : "topClose"}
         />
       </div>
       <div
-        className="dropdown__bot"
-        style={{
-          visibility: dropdownOuvert ? "visible" : "hidden",
-          opacity: dropdownOuvert ? "1" : "0",
-          height: dropdownOuvert ? "100%" : "0",
-        }}
+        className={`dropdown__bot ${dropdownOuvert ? "botOpen" : "botClose"}`}
       >
         <p
           style={{
             marginTop: dropdownOuvert ? "0" : "-30px",
           }}
         >
-          {dataAbout.content}
+          {content}
         </p>
       </div>
     </div>

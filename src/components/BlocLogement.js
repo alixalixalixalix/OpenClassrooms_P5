@@ -32,8 +32,8 @@ const BlocLogement = () => {
         </div>
       </div>
       <div className="blocLogement__bot">
-        <Dropdown id="dropdown__description" />
-        <Dropdown />
+        <Dropdown name="Description" />
+        <Dropdown name="Équipements" />
       </div>
     </div>
   );

@@ -5,14 +5,18 @@ import About from "./pages/About";
 import Error from "./pages/Error";
 import FicheLogement from "./pages/FicheLogement";
 import './App.scss';
+// import data from "../data/data.json";
 
 const App = () => {
+
+// map de data pour extraire id ? 
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/fichelogement" element={<FicheLogement />} />
+        <Route path="/logement/:id" element={<FicheLogement />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>

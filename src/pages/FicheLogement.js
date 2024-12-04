@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BlocLogement from "../components/BlocLogement";
 
-const FicheLogement = () => {
+const FicheLogement = ({ description }) => {
   return (
     <div>
       <Header />
