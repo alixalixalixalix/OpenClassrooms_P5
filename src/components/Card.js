@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Card = ({ id, title, cover }) => {
   return (
-    <a href="">
+    <Link to={`logement/${id}`}>
       <article
         key={id}
         style={{
@@ -11,7 +12,7 @@ const Card = ({ id, title, cover }) => {
       >
         <h3>{title}</h3>
       </article>
-    </a>
+    </Link>
   );
 };
 

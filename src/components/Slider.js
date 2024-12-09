@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-const Slider = () => {
+const Slider = ({ pictures }) => {
   const [compteur, setCompteur] = useState(1);
   let min = 1;
-  let max = 4; // à terme max = nombre de pic dans la data
+  let max = pictures.length;
 
   function next() {
     if (compteur < max) {
@@ -25,17 +25,24 @@ const Slider = () => {
     <div className="marginComponent">
       <div className="slider">
         <div className="slider__imgContainer">
-          <img src="/logement-1.jpg" alt="" />
-          <img src="/logement-1.jpg" alt="" />
-          <img src="/logement-1.jpg" alt="" />
-          <img src="/logement-1.jpg" alt="" />
+          {pictures.map((picture) => (
+            <img src={picture}/>
+          ))}
         </div>
         <div className="slider__ui">
-          <img src="/arrow-slider-left.png" alt="icon précédente" />
+          <img
+            src="/arrow-slider-left.png"
+            alt="icon précédente"
+            onClick={prev}
+          />
           <p>
             {compteur}/{max}
           </p>
-          <img src="/arrow-slider-right.png" alt="icon suivante" />
+          <img
+            src="/arrow-slider-right.png"
+            alt="icon suivante"
+            onClick={next}
+          />
         </div>
       </div>
     </div>

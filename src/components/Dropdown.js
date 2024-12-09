@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Dropdown = ({ name, content }) => {
   // On déclare un état false
   const [dropdownOuvert, setDropdownOuvert] = useState(false);
-  // On déclare une fonction qui fait passer dropdownOuvert à true
+  // On déclare une fonction toggle qui fait passer dropdownOuvert à true
   const toggle = () => {
     setDropdownOuvert((switchEtat) => !switchEtat);
   };
@@ -21,11 +21,7 @@ const Dropdown = ({ name, content }) => {
       <div
         className={`dropdown__bot ${dropdownOuvert ? "botOpen" : "botClose"}`}
       >
-        <p
-          style={{
-            marginTop: dropdownOuvert ? "0" : "-30px",
-          }}
-        >
+        <p className={`${dropdownOuvert ? "botOpenP" : "botCloseP"}`}>
           {content}
         </p>
       </div>

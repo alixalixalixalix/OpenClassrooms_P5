@@ -11,10 +11,10 @@
   src: url(assets/font/Montserrat-Bold.ttf);
 }
 
-@mixin montserratBold(){
-  font-family: "montserrat-bold", sans-serif;  
+@mixin montserratBold() {
+  font-family: "montserrat-bold", sans-serif;
 }
-@mixin montserratMed(){
+@mixin montserratMed() {
   font-family: "montserrat-medium", sans-serif;
 }
 
@@ -47,8 +47,8 @@ $main-color: #ff6060;
 
 .marginComponent {
   max-width: 1440px;
-  padding-left:45px;
-  padding-right:45px;
+  padding-left: 45px;
+  padding-right: 45px;
   margin: auto;
   @media (max-width: 600px) {
     margin-left: 20px;
@@ -307,7 +307,6 @@ footer {
   p {
     padding: 16px 20px 20px 20px;
     margin: 0;
-    margin-top: -30px;
     transition: all 500ms;
     /*    transition-delay: 400ms;*/
   }
@@ -340,8 +339,12 @@ footer {
   height: 0;
 }
 
-
-
+.botOpenP {
+  margin-top: -30px;
+}
+.botCloseP {
+  margin-top: 0px;
+}
 
 .slider {
   position: relative;
@@ -381,7 +384,7 @@ footer {
   display: flex;
   justify-content: space-between;
   top: 0;
-  left:0;
+  left: 0;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -444,7 +447,7 @@ footer {
   &__tags {
     display: flex;
     gap: 10px;
-    button {
+    p {
       background-color: $main-color;
       border: 0;
       @include montserratBold;
@@ -454,6 +457,7 @@ footer {
       padding-bottom: 3px;
       border-radius: 10px;
       width: 115px;
+      text-align: center;
       @media (max-width: 600px) {
         font-size: 10px;
         width: 84px;
