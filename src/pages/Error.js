@@ -8,7 +8,7 @@ const Error = () => {
         <div>   
             <Header />
             <Bloc404 />
-            <Footer />
+            <Footer className="bottomFix"/>
         </div>
     );
 };

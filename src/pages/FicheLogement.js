@@ -13,8 +13,6 @@ const FicheLogement = () => {
   const listEquipments = onFiltre.equipments; // je rassemble les equipments pour les envoyer dans blocLogement
 
   // tjr 5 étoiles mais autant d'active que nb
-  // autant de li que d'éléments équipements
-  // slider
 
   return (
     <div>

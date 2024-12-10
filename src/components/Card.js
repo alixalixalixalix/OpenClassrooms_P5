@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Card = ({ id, title, cover }) => {
   return (
@@ -17,5 +17,3 @@ const Card = ({ id, title, cover }) => {
 };
 
 export default Card;
-
-// id, title, cover, pictures, description, hostName, hotsPic, rating, location, equipments, tags

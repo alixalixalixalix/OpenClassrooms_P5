@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from "../assets/logo/logo-kasa-white.png";
 
-const Footer = () => {
+const Footer = ({ className }) => {
     return (
-        <footer>
+        <footer className={className}>
             <img src={logo} alt="logo kasa blanc" />
             <p>© 2020 Kasa. All rights reserved</p>
         </footer>

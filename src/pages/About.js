@@ -13,11 +13,11 @@ const About = () => {
       <BannerAbout />
       <div className="sectionDropdown marginComponent">
         {dataAbout.map(({ name, content }) => (
-          <Dropdown name={name} content={content} />
+          <Dropdown name={name} content={<p>{content}</p>} />
         ))}
 
       </div>
-      <Footer />
+      <Footer className="bottomFix"/>
     </div>
   );
 };

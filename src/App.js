@@ -4,13 +4,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Error from "./pages/Error";
 import FicheLogement from "./pages/FicheLogement";
-import './App.scss';
-// import data from "../data/data.json";
+import "./App.scss";
 
 const App = () => {
-
-// map de data pour extraire id ? 
-
   return (
     <BrowserRouter>
       <Routes>

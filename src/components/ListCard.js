@@ -7,11 +7,11 @@ const ListCard = () => {
     <section className="marginComponent">
       <div id="listCard">
         {data.map(({ id, title, cover }) => (
-          <Card id={id} title={title} cover={cover} />
+          <Card key={`${title}-${id}`} id={id} title={title} cover={cover} />
         ))}
       </div>
     </section>
   );
 };
 
-export default ListCard; 
+export default ListCard;

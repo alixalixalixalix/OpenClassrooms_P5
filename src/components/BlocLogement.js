@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 
 const BlocLogement = ({
+  id,
   title,
   location,
   hostName,
@@ -21,7 +21,7 @@ const BlocLogement = ({
           <p>{location}</p>
           <div className="blocLogement__title__tags">
             {tags.map((unTag) => (
-              <p>{`${unTag}`}</p>
+              <p key={`${unTag}-${id}`}>{`${unTag}`}</p>
             ))}
           </div>
         </div>
@@ -39,13 +39,13 @@ const BlocLogement = ({
           </div>
         </div>
       </div>
-      <div className="blocLogement__bot">
-        <Dropdown name="Description" content={description} />
+      <div className="blocLogement__dropdown">
+        <Dropdown name="Description" content={<p>{description}</p>} />
         <Dropdown
           name="Équipements"
-          content={equipments.map((unEquipement) => (
-            <li>{`${unEquipement}`}</li>
-          ))}
+          content={<ul>{equipments.map((unEquipement) => (
+            <li key={`${unEquipement}-${id}`}>{`${unEquipement}`}</li>
+          ))}</ul>}
         ></Dropdown>
       </div>
     </div>

@@ -21,9 +21,7 @@ const Dropdown = ({ name, content }) => {
       <div
         className={`dropdown__bot ${dropdownOuvert ? "botOpen" : "botClose"}`}
       >
-        <p className={`${dropdownOuvert ? "botOpenP" : "botCloseP"}`}>
-          {content}
-        </p>
+        {content}
       </div>
     </div>
   );
