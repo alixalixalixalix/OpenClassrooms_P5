@@ -9,9 +9,9 @@ const BlocLogement = ({
   description,
   tags,
   rating,
-  equipments
+  equipments,
 }) => {
-
+  parseInt(rating); // On convertit rating en number
 
   return (
     <div className="blocLogement marginComponent">
@@ -32,10 +32,22 @@ const BlocLogement = ({
           </div>
           <div className="blocLogement__hote__note">
             <img src="/star-active.png" alt="etoile notation" />
-            <img src="/star-inactive.png" alt="etoile notation" />
-            <img src="/star-inactive.png" alt="etoile notation" />
-            <img src="/star-inactive.png" alt="etoile notation" />
-            <img src="/star-inactive.png" alt="etoile notation" />
+            <img
+              src={rating > 1 ? "/star-active.png" : "/star-inactive.png"}
+              alt="etoile notation"
+            />
+            <img
+              src={rating > 2 ? "/star-active.png" : "/star-inactive.png"}
+              alt="etoile notation"
+            />
+            <img
+              src={rating > 3 ? "/star-active.png" : "/star-inactive.png"}
+              alt="etoile notation"
+            />
+            <img
+              src={rating > 4 ? "/star-active.png" : "/star-inactive.png"}
+              alt="etoile notation"
+            />
           </div>
         </div>
       </div>
@@ -43,9 +55,13 @@ const BlocLogement = ({
         <Dropdown name="Description" content={<p>{description}</p>} />
         <Dropdown
           name="Équipements"
-          content={<ul>{equipments.map((unEquipement) => (
-            <li key={`${unEquipement}-${id}`}>{`${unEquipement}`}</li>
-          ))}</ul>}
+          content={
+            <ul>
+              {equipments.map((unEquipement) => (
+                <li key={`${unEquipement}-${id}`}>{`${unEquipement}`}</li>
+              ))}
+            </ul>
+          }
         ></Dropdown>
       </div>
     </div>

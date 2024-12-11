@@ -4,6 +4,7 @@ import { useState } from "react";
 const Slider = ({ id, pictures }) => {
   const [alone, setAlone] = useState(false);
 
+  // Si pictures < 2, on n'affiche pas les éléments d'UI
   useEffect(() => {
     if (pictures.length < 2) {
       setAlone(true);

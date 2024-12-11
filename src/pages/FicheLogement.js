@@ -8,23 +8,21 @@ import data from "../data/data.json";
 
 const FicheLogement = () => {
   const { id } = useParams();
-  const onFiltre = data.find((unLogement) => unLogement.id === id); // {id}
-  const listTags = onFiltre.tags; // je rassemble les tags pour les envoyer dans blocLogement
-  const listEquipments = onFiltre.equipments; // je rassemble les equipments pour les envoyer dans blocLogement
-
-  // tjr 5 étoiles mais autant d'active que nb
+  const dataTri = data.find((unLogement) => unLogement.id === id); // {id}
+  const listTags = dataTri.tags; // je recupère les tags pour les envoyer dans blocLogement
+  const listEquipments = dataTri.equipments; // je recupère les equipments pour les envoyer dans blocLogement
 
   return (
     <div>
       <Header />
-      <Slider pictures={onFiltre.pictures} />
+      <Slider pictures={dataTri.pictures} />
       <BlocLogement
-        title={onFiltre.title}
-        location={onFiltre.location}
-        hostName={onFiltre.host.name}
-        hostPicture={onFiltre.host.picture}
-        description={onFiltre.description}
-        rating={onFiltre.rating}
+        title={dataTri.title}
+        location={dataTri.location}
+        hostName={dataTri.host.name}
+        hostPicture={dataTri.host.picture}
+        description={dataTri.description}
+        rating={dataTri.rating}
         tags={listTags}
         equipments={listEquipments}
       />
