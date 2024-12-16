@@ -31,6 +31,15 @@ const BlocLogement = ({
             <img src={hostPicture} alt="hote" />
           </div>
           <div className="blocLogement__hote__note">
+            {(() => {
+              let result = [];
+              for (let i = 1; i < 6; i++) {
+                result.push(<img key={i} src={i < rating ? "/star-active.png" : "/star-inactive.png"} alt="etoile notation" />);
+              }
+              return result;
+            })()}
+
+            {/*
             <img src="/star-active.png" alt="etoile notation" />
             <img
               src={rating > 1 ? "/star-active.png" : "/star-inactive.png"}
@@ -48,6 +57,7 @@ const BlocLogement = ({
               src={rating > 4 ? "/star-active.png" : "/star-inactive.png"}
               alt="etoile notation"
             />
+            */}
           </div>
         </div>
       </div>

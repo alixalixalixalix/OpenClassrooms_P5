@@ -50,22 +50,22 @@ $main-color: #ff6060;
   padding-left: 45px;
   padding-right: 45px;
   margin: auto;
+  width: 100%;
   @media (max-width: 600px) {
     margin-left: 20px;
     margin-right: 20px;
     padding-left: 0px;
     padding-right: 0px;
+    width: 90%;
   }
 }
 
-/*
-#root div {
-  height: 100%;
+#root > div {
+  margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
 }
-*/
 
 header {
   display: flex;
@@ -135,16 +135,18 @@ footer {
     }
   }
 }
-
+/*
 .bottomFix {
   position:absolute;
   bottom:0;
 }
+*/
 
 #bloc404 {
   color: $main-color;
   text-align: center;
   margin-bottom: 139px;
+  flex: 1;
   @media (max-width: 600px) {
     margin-top: 80px;
     margin-bottom: 110px;
@@ -209,9 +211,9 @@ footer {
   background-position: center;
   background-color: black;
   &__br {
-    display:none;
-    @media (max-width: 600px){
-      display:inline;
+    display: none;
+    @media (max-width: 600px) {
+      display: inline;
     }
   }
 }
@@ -240,7 +242,7 @@ footer {
   gap: 60px;
   a {
     width: 28%;
-    @media (max-width: 940px){
+    @media (max-width: 940px) {
       width: 43%;
     }
   }
@@ -278,7 +280,7 @@ footer {
 #listCard::after {
   content: "";
   width: 28%;
-  @media (max-width:940px){
+  @media (max-width: 940px) {
     display: none;
   }
 }
@@ -350,15 +352,19 @@ footer {
   }
 }
 
-.blocLogement__top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  margin-bottom: 24px;
-  @media (max-width: 600px) {
-    margin-top: 15px;
-    margin-bottom: 13px;
+.blocLogement {
+  flex: 1;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    @media (max-width: 600px) {
+      margin-top: 15px;
+      margin-bottom: 13px;
+    }
   }
 }
 
@@ -461,6 +467,7 @@ footer {
   display: flex;
   gap: 76px;
   margin-bottom: 8px;
+  align-items: flex-start;
   @media (max-width: 600px) {
     flex-direction: column;
     gap: 0;
@@ -468,9 +475,11 @@ footer {
 }
 
 .sectionDropdown {
-  display: flex;
-  justify-content: center;
+  flex: 1;
+  display:flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   margin-top: 38px;
   @media (max-width: 600px) {
     margin-top: 19px;
@@ -552,7 +561,6 @@ footer {
 .topClose {
   transform: rotate(0deg);
 }
-
 .botOpen {
   visibility: visible;
   opacity: 1;
