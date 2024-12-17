@@ -50,7 +50,7 @@ $main-color: #ff6060;
   padding-left: 45px;
   padding-right: 45px;
   margin: auto;
-  width: 100%;
+  width: 90%;
   @media (max-width: 600px) {
     margin-left: 20px;
     margin-right: 20px;
@@ -440,6 +440,8 @@ footer {
 
   &__note {
     margin-top: 21px;
+    display: flex;
+    justify-content: end;
     img {
       width: 36px;
       height: 36px;

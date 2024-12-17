@@ -5,7 +5,10 @@ const Navigation = () => {
   return (
     <nav className="navbar">
       <ul>
-        <NavLink to="/" className={(nav) => (nav.isActive ? "navbar__lien--active" : "")}>
+        <NavLink
+          to="/"
+          className={(nav) => (nav.isActive ? "navbar__lien--active" : "")}
+        >
           <li className="navbar__lien">Accueil</li>
         </NavLink>
         <NavLink
