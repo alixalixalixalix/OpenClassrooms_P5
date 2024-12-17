@@ -11,7 +11,17 @@ const BlocLogement = ({
   rating,
   equipments,
 }) => {
-  parseInt(rating); // On convertit rating en number
+  // On convertit rating en number
+  parseInt(rating);
+
+  // Création d'un tableau pour apparition des ratings
+  const tabRating = Array.from({ length: 5 }, (_, i) => (
+    <img
+      key={i}
+      src={i < rating ? "/star-active.png" : "/star-inactive.png"}
+      alt="etoile notation"
+    />
+  ));
 
   return (
     <div className="blocLogement marginComponent">
@@ -31,14 +41,7 @@ const BlocLogement = ({
             <img src={hostPicture} alt="hote" />
           </div>
           <div className="blocLogement__hote__note">
-            {(() => {
-              let result = [];
-              for (let i = 1; i < 6; i++) {
-                result.push(<img key={i} src={i < rating ? "/star-active.png" : "/star-inactive.png"} alt="etoile notation" />);
-              }
-              return result;
-            })()}
-
+            {tabRating}
             {/*
             <img src="/star-active.png" alt="etoile notation" />
             <img

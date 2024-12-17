@@ -17,7 +17,7 @@ const About = () => {
         ))}
 
       </div>
-      <Footer className="bottomFix"/>
+      <Footer />
     </div>
   );
 };

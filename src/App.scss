@@ -71,12 +71,12 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 45px;
-  img {
-    width: 210px;
-  }
   @media (max-width: 600px) {
     padding: 20px;
-    img {
+  }
+  img {
+    width: 210px;
+    @media (max-width: 600px) {
       width: 145px;
     }
   }
@@ -135,12 +135,6 @@ footer {
     }
   }
 }
-/*
-.bottomFix {
-  position:absolute;
-  bottom:0;
-}
-*/
 
 #bloc404 {
   color: $main-color;
@@ -204,7 +198,6 @@ footer {
 }
 
 .banner__home {
-  // darken()
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/assets/img/paysage-ile.jpg);
   background-size: cover;
@@ -219,7 +212,6 @@ footer {
 }
 
 .banner__about {
-  // darken()
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
     url(/assets/img/paysage-montagne.jpg);
   background-size: cover;
@@ -354,7 +346,6 @@ footer {
 
 .blocLogement {
   flex: 1;
-
   &__top {
     display: flex;
     justify-content: space-between;
@@ -476,7 +467,7 @@ footer {
 
 .sectionDropdown {
   flex: 1;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
@@ -555,6 +546,7 @@ footer {
   }
 }
 
+// Déploiement dropdown
 .topOpen {
   transform: rotate(180deg);
 }

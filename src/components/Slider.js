@@ -13,8 +13,7 @@ const Slider = ({ id, pictures }) => {
   let min = 1;
   let max = pictures.length;
 
-  const ref = useRef(null);
-
+  // Fonction delay pour slider
   const [isDisabled, setIsDisabled] = useState(false);
   const delay = () => {
     setIsDisabled(true);
@@ -23,6 +22,10 @@ const Slider = ({ id, pictures }) => {
     }, 750);
   };
 
+  // Récupère le container des images du slider
+  const ref = useRef(null);
+
+  // Fonction pour passer d'une img à une autre
   const next = () => {
     if (!isDisabled) {
       if (compteur < max) {
